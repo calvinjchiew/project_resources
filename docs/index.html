@@ -28,32 +28,50 @@
         <div class="container">
             <div class="page-header" id="banner">
                 <div class="row">
-                    <div class="col-lg-5">
+                    <div class="col-lg-12">
                         <h1>Predicting Food Inspection Outcomes in Chicago</h1>
                         <p class="lead">CS109A Final Project</p>
                      </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="list-group table-of-contents">
-                            <a class="list-group-item" href="#navbar">Overview</a>
-                            <a class="list-group-item" href="#buttons">Background</a>
-                            <a class="list-group-item" href="#typography">Data Preparation</a>
-                            <a class="list-group-item" href="#tables">Data Exploration</a>
-                            <a class="list-group-item" href="#forms">Model Fitting</a>
-                            <a class="list-group-item" href="#navs">Model Evaluation</a>
-                            <a class="list-group-item" href="#indicators">Conclusion</a>
-                            <a class="list-group-item" href="#progress-bars">Acknowledgments</a>
-                            <a class="list-group-item" href="#containers">GitHub</a>
-                        </div>
-                    </div>
-                    <div class="col-lg9">
-                            <div id="includedContent"></div>
-                    </div>
-                </div>
             </div>
         </div>
-    
+        
+         <div class="container">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="{{ url_for('blocks') }}">Overview</a></li>
+                                <li><a href="{{ url_for('blocks') }}">Background</a></li>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Data<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="#">Data Preparation</a></li>
+                                      <li><a href="#">Data Exploration</a></li>
+                                    </ul>
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Model<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                      <li><a href="#">Model Fitting</a></li>
+                                      <li><a href="#">Model Evaluation</a></li>
+                                    </ul>
+                                <li><a href="{{ url_for('settings') }}">Conclusion</a></li>
+                                <li><a href="{{ url_for('settings') }}">Acknowledgments</a></li>
+                                <li><a href="{{ url_for('settings') }}">GitHub</a></li>
+                            </ul>
+                    </div>
+                </div>
+            </nav>
+    <div class="col-lg12"><div id="includedContent"></div></div>
     </body>
     
 </html>
