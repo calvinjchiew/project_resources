@@ -11,6 +11,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <script>
+        $(function(){
+            $('#menu li a').on('click', function(e){
+                e.preventDefault();
+                var page_url=$(this).prop('href');
+                $('#content').load(page_url);
+            });
+        });
+        </script>
+        
+        <script>
         code_show=true;
         function code_toggle() {
             if (code_show){
@@ -21,16 +31,6 @@
             code_show = !code_show
         }
         $( document ).ready(code_toggle);
-        </script>
-        
-        <script>
-        $(function(){
-            $('#menu li a').on('click', function(e){
-                e.preventDefault();
-                var page_url=$(this).prop('href');
-                $('#content').load(page_url);
-            });
-        });
         </script>
         
         <title>CS109A Inspections_2</title>
@@ -58,14 +58,14 @@
                     <li><a href="overview.html">Overview</a></li>
                     <li><a href="background.html">Background</a></li>
                     <li><a href="todo.html">Data Preparation</a></li>
-                    <li><a href="todo.html">Data Exploration</a></li>
-                    <li><a href="todo.html">Model Fitting</a></li>
+                    <li><a href="overview.html">Data Exploration</a></li>
+                    <li><a href="background.html">Model Fitting</a></li>
                     <li><a href="todo.html">Model Evaluation</a></li>
-                    <li><a href="todo.html">Conclusion</a></li>
+                    <li><a href="overview.html">Conclusion</a></li>
                     <li><a href="todo.html">Acknowledgments</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" action="javascript:code_toggle()">
-                        <button type="submit" class="btn btn-success">Toggle Code2</button>
+                        <button type="submit" class="btn btn-success">Toggle Code</button>
                 </form>
             </div>
         </nav>
