@@ -7,6 +7,9 @@
         <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
         <link href="https://bootswatch.com/cerulean/bootstrap.min.css" rel="stylesheet"/>
 
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
@@ -53,26 +56,35 @@
         </div>
           
         <nav class="navbar navbar-default">
-            <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav" id="menu">
-                    <li><a href="overview.html">Overview</a></li>
-                    <li><a href="background.html">Background</a></li>
-                    <li><a href="todo.html">Data Preparation</a></li>
-                    <li><a href="overview.html">Data Exploration</a></li>
-                    <li><a href="background.html">Model Fitting</a></li>
-                    <li><a href="todo.html">Model Evaluation</a></li>
-                    <li><a href="overview.html">Conclusion</a></li>
-                    <li><a href="todo.html">Acknowledgments</a></li>
-                </ul>
-                <form class="navbar-form navbar-right" action="javascript:code_toggle()">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav" id="menu">
+                        <li><a href="overview.html">Overview</a></li>
+                        <li><a href="background.html">Background</a></li>
+                        <li><a href="todo.html">Data Preparation</a></li>
+                        <li><a href="overview.html">Data Exploration</a></li>
+                        <li><a href="background.html">Model Fitting</a></li>
+                        <li><a href="todo.html">Model Evaluation</a></li>
+                        <li><a href="overview.html">Conclusion</a></li>
+                        <li><a href="todo.html">Acknowledgments</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" action="javascript:code_toggle()">
                         <button type="submit" class="btn btn-success">Toggle Code</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </nav>
-         
-        <div class="col-lg12">
-            <div id="content"></div>
-        </div>
+        
+        <main>
+            <div class="row">
+                <div class="col-lg12">
+                    <div class="bs-component">
+                        <div id="content"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
     </div>
     
     </body>
