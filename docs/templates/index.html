@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="bs-component">
+            <h3 align="left">Welcome, <strong>{{ username }}</strong>!</h3>
+            <blockquote><p align="left">Your current points: {{ points }}</p></blockquote>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="bs-component">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Call Blocks</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Block</th>
+                                <th>Reason</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form action="{{ url_for('rmblock') }}" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        {% for block in blocks %}
+                                        <tr>
+                                            <td>{{ block['date'] }}</td>
+                                            <td>{{ block['comment'] }}</td>
+                                            <td><input type="radio" name="date" value="{{ block.date }}" checked></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </div>
+                                    <tr>
+                                        <td colspan='2'></td>
+                                        <td><button type="submit" class="btn btn-default btn-xs">Remove</button></td>
+                                    </tr>
+                                </fieldset>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="bs-component">        
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Call Requests</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Request</th>
+                                <th>Reason</th>
+                                <th>Del</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form action="{{ url_for('rmrequest') }}" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                            {% for request in requests %}
+                                            <tr>
+                                                <td>{{ request['date'] }}</td>
+                                                <td>{{ request['comment'] }}</td>
+                                                <td><input type="radio" name="date" value="{{ request.date }}" checked></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </div>
+                                        <tr>
+                                            <td colspan='2'></td>
+                                            <td><button type="submit" class="btn btn-default btn-xs">Remove</button></td>
+                                        </tr>
+                                </fieldset>
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
