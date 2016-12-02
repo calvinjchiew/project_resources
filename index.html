@@ -10,15 +10,11 @@
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <script>
+        <script> 
         $(function(){
-            $('#menu li a').on('click', function(e){
-                e.preventDefault();
-                var page_url=$(this).prop('href');
-                $('#content').load(page_url);
-            });
-        });    
-        </script>
+            $("#includedContent").load("overview.html"); 
+        });
+        </script> 
         
         <title>CS109A Inspections_2</title>
 
@@ -41,9 +37,9 @@
           
         <nav class="navbar navbar-default">
             <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav" id="menu">
-                    <li><a href="overview.html">Overview</a></li>
-                    <li><a href="background.html">Background</a></li>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Background</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Data<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -64,7 +60,7 @@
         </nav>
          
         <div class="col-lg12">
-            <div id="#content"></div>
+            <div id="includedContent"></div>
         </div>
     </div>
     
