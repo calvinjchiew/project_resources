@@ -17,7 +17,20 @@
                 var page_url=$(this).prop('href');
                 $('#content').load(page_url);
             });
-        });    
+        });
+        </script>
+        
+        <script>
+        code_show=true;
+        function code_toggle() {
+            if (code_show){
+                $('div.input').hide();
+            } else {
+                $('div.input').show();
+            }
+            code_show = !code_show
+        }
+        $( document ).ready(code_toggle);
         </script>
         
         <title>CS109A Inspections_2</title>
@@ -45,13 +58,13 @@
                     <li><a href="overview.html">Overview</a></li>
                     <li><a href="background.html">Background</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Data<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Data<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="todo.html">Data Preparation</a></li>
                             <li><a href="todo.html">Data Exploration</a></li>
                         </ul>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Model<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Model<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="todo.html">Model Fitting</a></li>
                             <li><a href="todo.html">Model Evaluation</a></li>
