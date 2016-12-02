@@ -11,16 +11,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <script>
-        $(function(){
-            $('#menu li a').on('click', function(e){
-                e.preventDefault();
-                var page_url=$(this).prop('href');
-                $('#content').load(page_url);
-            });
-        });
-        </script>
-        
-        <script>
         code_show=false;
         function code_toggle() {
             if (code_show){
@@ -31,6 +21,16 @@
             code_show = !code_show
         }
         $( document ).ready(code_toggle);
+        </script>
+        
+        <script>
+        $(function(){
+            $('#menu li a').on('click', function(e){
+                e.preventDefault();
+                var page_url=$(this).prop('href');
+                $('#content').load(page_url);
+            });
+        });
         </script>
         
         <title>CS109A Inspections_2</title>
