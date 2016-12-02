@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-</head>
-<body>
-<p>This is my first web page.</p>
 
-<p>I even included a link to the <a href="http://www.harvard.edu">Harvard Home Page</a><br></p>
-</body>
+<html lang="en">
+
+    <head>
+
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet"/>
+
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script> 
+        $(function(){
+            $("#includedContent").load("page1.html"); 
+        });
+        </script> 
+        
+        <title>CS109A Inspections_2</title>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="page-header" id="banner">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h1>Predicting Food Inspection Outcomes in Chicago</h1>
+                        <p class="lead">CS109A Final Project</p>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="list-group table-of-contents">
+                            <a class="list-group-item" href="#navbar">Overview</a>
+                            <a class="list-group-item" href="#buttons">Background</a>
+                            <a class="list-group-item" href="#typography">Data Preparation</a>
+                            <a class="list-group-item" href="#tables">Data Exploration</a>
+                            <a class="list-group-item" href="#forms">Model Fitting</a>
+                            <a class="list-group-item" href="#navs">Model Evaluation</a>
+                            <a class="list-group-item" href="#indicators">Conclusion</a>
+                            <a class="list-group-item" href="#progress-bars">Acknowledgments</a>
+                            <a class="list-group-item" href="#containers">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="col-lg4">
+                            <div id="includedContent"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+    
 </html>
