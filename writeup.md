@@ -18,9 +18,6 @@ the lexically scoped `eval_l` evaluator would return 4, similar to `eval_s` whic
 
 To implement `eval_l`, I started by first copying `eval_d` and changing the evaluation of `Fun` to return type `Env.Closure` pairing the function itself and the environment at time of definition, and changing the evaluation of `App` to evaluate the body of the function in the lexical environment from the corresponding closure. 
 
-However, since `eval_s` and `eval_d` were implemented earlier to return type `expr`, I had to wrap `eval_l` around `eval_l'` which return type `Env.Val`, now that closures are involved.
+However, since `eval_s` and `eval_d` were implemented earlier to return type `expr`, I had to wrap `eval_l` around `eval_l'` which returned type `Env.Val`, now that closures were involved. The value returned from `eval_l'` is then pattern matched to extract only the expression part which is then given as output from `eval_l`.
 
-
-
-
-
+Since `eval_d` and `eval_l` have different type signatures, I have chosen to leave them separate, instead of attempting to merge the two implementations.
