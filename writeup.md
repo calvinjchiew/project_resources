@@ -16,8 +16,8 @@ f 3 ;;
 
 the lexically scoped `eval_l` evaluator would return 4, similar to `eval_s` which is based on substitution semantics. In contrast, the dynamically scoped evaluator `eval_d` would return 5.
 
-To implement `eval_l`, I started by first copying `eval_d` and changing the evaluation of type `Fun` to return an `Env.Closure` pairing the function itself and the environment at time of definition, as well as changing the evaluation of type `App` to evaluate the body of the function in the lexical environment from the corresponding `Env.Closure`. 
+To implement `eval_l`, I started by first copying `eval_d` and changing the evaluation of type `Fun` to return an `Env.Closure` pairing the function itself and the environment at time of definition. Then, the evaluation of type `App` was changed to evaluate the body of the function in an extended lexical environment from the corresponding `Env.Closure`, rather than an extended current environment.
 
 In the earlier stages, I had implemented `eval_s` and `eval_d` to return type `expr`. Now that closures were involved, I had to wrap `eval_l` around `eval_l'` which returned type `Env.Val` instead. The value returned from `eval_l'` is then pattern matched to extract only the expression part, which is passed as the output from `eval_l`.
 
-Since `eval_d` and `eval_l` have different type signatures, I have chosen to leave them separate, instead of attempting to merge these two implementations.
+Since `eval_d` and `eval_l` have different type signatures, I chose to leave them separate, instead of attempting to merge these two implementations together.
